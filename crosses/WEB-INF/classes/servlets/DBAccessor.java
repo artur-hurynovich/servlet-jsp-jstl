@@ -10,7 +10,7 @@ public class DBAccessor {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3306/my_db", "root", "IUm9jcB4Fln87fT");
+                    ("jdbc:mysql://localhost:3306/my_db", "root", "PASSWORD");
             preparedStatement = connection.prepareStatement
                     ("SELECT * FROM crosses WHERE number = (?);");
             result = new ArrayList<>();
