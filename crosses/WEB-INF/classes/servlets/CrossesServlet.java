@@ -20,6 +20,9 @@ public class CrossesServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
         String search = request.getParameter("search");
         result = accessor.getCrosses(search);
+        if (result.size() == 0) {
+            result.add(new String[] {"nothing found", "nothing found", "nothing found"});
+        }
         request.setAttribute("search", search.toUpperCase());
         request.setAttribute("result", result);
         try {
